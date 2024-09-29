@@ -1,0 +1,24 @@
+Question:
+6.2
+- Nếu nhấn vào "Cancel" chương trình sẽ trả về kết quả "No" nghĩa là chương trình sẽ chỉ trả về "Yes" nếu bạn nhấn "Yes" còn tất cả lựa chọn còn lại chương trình đều trả về "No"
+-customize the options to users :"I do" và "I don't":
+import javax.swing.JOptionPane;
+
+public class CustomOptionsExample {
+    public static void main(String[] args) {
+        String[] options = {"Toi dong y", "Toi khong dong y"};
+        
+        int choice = JOptionPane.showOptionDialog(null, 
+                "Ban co dong y voi cac dieu khoan khong?", "Hop thoai Tùy chon Tùy chinh", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+
+        if (choice == 0) {
+            JOptionPane.showMessageDialog(null, "Ban da chon Toi dong y.");
+        } else if (choice == 1) {
+            JOptionPane.showMessageDialog(null, "Ban da chon Toi khong dong y.");
+        } else {
+            JOptionPane.showMessageDialog(null, "Ban da dong hop thoai.");
+        }
+
+        System.exit(0);
+    }
+}
